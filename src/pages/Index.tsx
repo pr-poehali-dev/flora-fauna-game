@@ -8,28 +8,94 @@ import Icon from '@/components/ui/icon';
 
 const GAME_DATA = {
   animals: [
-    { word: 'МЕДВЕДЬ', hint: 'Крупный хищник, хозяин тайги, впадает в зимнюю спячку', category: 'Животные' },
-    { word: 'СОБОЛЬ', hint: 'Ценный пушной зверёк с тёмной шкуркой', category: 'Животные' },
-    { word: 'РЫСЬ', hint: 'Дикая кошка с кисточками на ушах', category: 'Животные' },
-    { word: 'ГЛУХАРЬ', hint: 'Крупная лесная птица, токует весной', category: 'Животные' },
-    { word: 'КУНИЦА', hint: 'Проворный хищник из семейства куньих', category: 'Животные' },
+    { 
+      word: 'МЕДВЕДЬ', 
+      hint: 'Крупный хищник, хозяин тайги, впадает в зимнюю спячку', 
+      category: 'Животные',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/281fb2a8-6ced-45b6-821c-8fe4a76354aa.jpg'
+    },
+    { 
+      word: 'СОБОЛЬ', 
+      hint: 'Ценный пушной зверёк с тёмной шкуркой', 
+      category: 'Животные',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/22e94dd8-47f7-49ee-8f55-22ddc31286d4.jpg'
+    },
+    { 
+      word: 'РЫСЬ', 
+      hint: 'Дикая кошка с кисточками на ушах', 
+      category: 'Животные',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/da2825ab-d605-4e48-a806-0ebe3d4b36ea.jpg'
+    },
+    { 
+      word: 'ГЛУХАРЬ', 
+      hint: 'Крупная лесная птица, токует весной', 
+      category: 'Животные',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/2b1f868b-7b36-4f86-ad83-156cb99a39a8.jpg'
+    },
+    { 
+      word: 'КУНИЦА', 
+      hint: 'Проворный хищник из семейства куньих', 
+      category: 'Животные',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/af0013cb-edcd-43f5-b80b-84b67f5e787d.jpg'
+    },
   ],
   plants: [
-    { word: 'КЕДР', hint: 'Хвойное дерево с вкусными орешками', category: 'Растения' },
-    { word: 'ПИХТА', hint: 'Вечнозелёное хвойное дерево с плоской хвоей', category: 'Растения' },
-    { word: 'БАГУЛЬНИК', hint: 'Кустарник с душистыми белыми цветами', category: 'Растения' },
-    { word: 'БРУСНИКА', hint: 'Ягодный кустарничек, плоды красные и кислые', category: 'Растения' },
-    { word: 'ЧЕРНИКА', hint: 'Кустарничек с чёрными сладкими ягодами', category: 'Растения' },
+    { 
+      word: 'КЕДР', 
+      hint: 'Хвойное дерево с вкусными орешками', 
+      category: 'Растения',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/8e3645eb-2a30-47d2-925d-8c38552c22e5.jpg'
+    },
+    { 
+      word: 'ПИХТА', 
+      hint: 'Вечнозелёное хвойное дерево с плоской хвоей', 
+      category: 'Растения',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/e59b26b5-8c4a-48c7-a7ad-300601ad6960.jpg'
+    },
+    { 
+      word: 'БАГУЛЬНИК', 
+      hint: 'Кустарник с душистыми белыми цветами', 
+      category: 'Растения',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/d4d23118-2201-4224-a5f6-7fb3e3ff3d30.jpg'
+    },
+    { 
+      word: 'БРУСНИКА', 
+      hint: 'Ягодный кустарничек, плоды красные и кислые', 
+      category: 'Растения',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/e284703d-811e-4225-9d60-1bebdfec02b4.jpg'
+    },
+    { 
+      word: 'ЧЕРНИКА', 
+      hint: 'Кустарничек с чёрными сладкими ягодами', 
+      category: 'Растения',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/82ec7f5d-7c4f-4c3d-9530-7be24bb87429.jpg'
+    },
   ],
   rare: [
-    { word: 'ВЫДРА', hint: 'Водный зверёк-рыболов с ценным мехом', category: 'Редкие виды' },
-    { word: 'ФИЛИН', hint: 'Крупная ночная хищная птица', category: 'Редкие виды' },
-    { word: 'ВЕНЕРИН', hint: 'Редкий вид башмачка - цветок-орхидея', category: 'Редкие виды' },
+    { 
+      word: 'ВЫДРА', 
+      hint: 'Водный зверёк-рыболов с ценным мехом', 
+      category: 'Редкие виды',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/56c8323d-eff2-4c34-bb1f-3340f7333247.jpg'
+    },
+    { 
+      word: 'ФИЛИН', 
+      hint: 'Крупная ночная хищная птица', 
+      category: 'Редкие виды',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/5c94a26c-b328-4ac7-9c95-10beb7405026.jpg'
+    },
+    { 
+      word: 'ВЕНЕРИН', 
+      hint: 'Редкий вид башмачка - цветок-орхидея', 
+      category: 'Редкие виды',
+      image: 'https://cdn.poehali.dev/projects/eaf0a102-ff62-4535-a684-0be0ce1d48ef/files/6cee3937-980c-4ae0-baf1-86b701ae24c2.jpg'
+    },
   ],
 };
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<'menu' | 'game'>('menu');
+  const [showImage, setShowImage] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<'animals' | 'plants' | 'rare'>('animals');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
@@ -84,6 +150,7 @@ const Index = () => {
     }
     setGuessedLetters([]);
     setAttempts(5);
+    setShowImage(false);
   };
 
   const startGame = (category: 'animals' | 'plants' | 'rare') => {
@@ -94,6 +161,7 @@ const Index = () => {
     setScore(0);
     setAttempts(5);
     setHintsUsed(0);
+    setShowImage(false);
   };
 
   const useHint = () => {
@@ -109,6 +177,13 @@ const Index = () => {
       setHintsUsed(hintsUsed + 1);
       setScore(Math.max(0, score - 5));
     }
+  };
+
+  const toggleImageHint = () => {
+    if (!showImage) {
+      setScore(Math.max(0, score - 10));
+    }
+    setShowImage(!showImage);
   };
 
   const alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
@@ -396,6 +471,16 @@ const Index = () => {
               <CardTitle className="text-2xl mt-4">{currentWord.hint}</CardTitle>
             </CardHeader>
             <CardContent>
+              {showImage && (
+                <div className="mb-6 flex justify-center">
+                  <img 
+                    src={currentWord.image} 
+                    alt={currentWord.word}
+                    className="w-full max-w-md h-64 object-cover rounded-lg shadow-lg animate-fade-in"
+                  />
+                </div>
+              )}
+
               <Progress value={(guessedLetters.length / currentWord.word.length) * 100} className="mb-6" />
               
               <div className="flex flex-wrap gap-3 justify-center mb-8">
@@ -432,7 +517,7 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <div className="text-center flex gap-4 justify-center">
+          <div className="text-center flex gap-4 justify-center flex-wrap">
             <Button 
               onClick={useHint} 
               variant="secondary" 
@@ -441,7 +526,15 @@ const Index = () => {
               className="animate-bounce-soft"
             >
               <Icon name="Lightbulb" size={20} className="mr-2" />
-              Подсказка ({maxHints - hintsUsed})
+              Буква ({maxHints - hintsUsed})
+            </Button>
+            <Button 
+              onClick={toggleImageHint} 
+              variant={showImage ? "default" : "secondary"}
+              size="lg"
+            >
+              <Icon name="Image" size={20} className="mr-2" />
+              {showImage ? 'Скрыть фото' : 'Показать фото (-10)'}
             </Button>
             <Button onClick={nextWord} variant="outline" size="lg">
               <Icon name="SkipForward" size={20} className="mr-2" />

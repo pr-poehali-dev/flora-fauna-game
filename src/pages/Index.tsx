@@ -35,6 +35,8 @@ const Index = () => {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
   const [score, setScore] = useState(0);
   const [attempts, setAttempts] = useState(5);
+  const [hintsUsed, setHintsUsed] = useState(0);
+  const [maxHints] = useState(3);
 
   const getCurrentWord = () => {
     const categoryWords = GAME_DATA[selectedCategory];
@@ -91,6 +93,22 @@ const Index = () => {
     setGuessedLetters([]);
     setScore(0);
     setAttempts(5);
+    setHintsUsed(0);
+  };
+
+  const useHint = () => {
+    if (hintsUsed >= maxHints) return;
+    
+    const unguessedLetters = currentWord.word
+      .split('')
+      .filter(letter => !guessedLetters.includes(letter));
+    
+    if (unguessedLetters.length > 0) {
+      const randomLetter = unguessedLetters[Math.floor(Math.random() * unguessedLetters.length)];
+      setGuessedLetters([...guessedLetters, randomLetter]);
+      setHintsUsed(hintsUsed + 1);
+      setScore(Math.max(0, score - 5));
+    }
   };
 
   const alphabet = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
@@ -293,6 +311,7 @@ const Index = () => {
                       <li>За правильную букву получаете 10 очков</li>
                       <li>За угаданное слово — бонус 50 очков</li>
                       <li>У вас есть 5 попыток на каждое слово</li>
+                      <li>Используйте подсказки (открывают случайную букву), но они отнимают 5 очков</li>
                     </ol>
                   </div>
                   <div>
@@ -300,6 +319,8 @@ const Index = () => {
                     <ul className="list-disc list-inside space-y-1">
                       <li>Правильная буква: +10 очков</li>
                       <li>Угаданное слово: +50 очков</li>
+                      <li>Использование подсказки: -5 очков</li>
+                      <li>Доступно 3 подсказки на игру</li>
                     </ul>
                   </div>
                 </CardContent>
@@ -357,6 +378,10 @@ const Index = () => {
                 <Icon name="Heart" size={20} className="mr-2" />
                 {attempts} попыток
               </Badge>
+              <Badge variant="outline" className="text-lg px-4 py-2">
+                <Icon name="Lightbulb" size={20} className="mr-2" />
+                {maxHints - hintsUsed} подсказок
+              </Badge>
             </div>
           </div>
 
@@ -407,7 +432,17 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <div className="text-center">
+          <div className="text-center flex gap-4 justify-center">
+            <Button 
+              onClick={useHint} 
+              variant="secondary" 
+              size="lg"
+              disabled={hintsUsed >= maxHints}
+              className="animate-bounce-soft"
+            >
+              <Icon name="Lightbulb" size={20} className="mr-2" />
+              Подсказка ({maxHints - hintsUsed})
+            </Button>
             <Button onClick={nextWord} variant="outline" size="lg">
               <Icon name="SkipForward" size={20} className="mr-2" />
               Пропустить слово
